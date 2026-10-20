@@ -8,8 +8,6 @@ O projeto foi desenvolvido com foco em organização de código, experiência do
 
 ## 📸 Preview
 
-> Screenshots da aplicação serão adicionados nesta seção.
-
 ### Dashboard
 
 ![Dashboard](./public/screenshots/dashboard.png)
