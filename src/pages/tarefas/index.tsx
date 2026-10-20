@@ -1,0 +1,1 @@
+export { Tarefas as default } from "@/src/components";

@@ -1,0 +1,34 @@
+{
+  "name": "task-manager-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@primeicons/react": "^8.0.2",
+    "@primereact/ui": "^11.2.0",
+    "@primeuix/themes": "^3.0.1",
+    "axios": "^1.20.0",
+    "bulma": "^1.0.4",
+    "chart.js": "^4.5.1",
+    "next": "16.4.0",
+    "primeflex": "^4.0.0",
+    "primeicons": "^8.0.2",
+    "primereact": "^9.6.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "typescript": "^5"
+  }
+}

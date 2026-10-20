@@ -1,0 +1,418 @@
+html[data-theme="dark"] {
+    color-scheme: dark;
+    background-color: #121212;
+}
+
+html[data-theme="dark"] body {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+    background-color: #ffffff;
+}
+
+html[data-theme="light"] body {
+    background-color: #ffffff;
+    color: #363636;
+}
+
+
+/* =========================
+   GRÁFICOS DO DASHBOARD
+   ========================= */
+
+.dashboard-chart {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media screen and (max-width: 1023px) {
+    .dashboard-chart {
+        width: 100%;
+        max-width: 360px;
+        height: 280px;
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 768px) {
+    .dashboard-chart {
+        width: 100%;
+        max-width: 280px;
+        height: 260px;
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================
+   MOBILE PEQUENO
+   ========================= */
+
+@media screen and (max-width: 480px) {
+    .dashboard-chart {
+        max-width: 250px;
+        height: 240px;
+    }
+}
+
+/* =========================
+   RESUMO DO DASHBOARD
+   ========================= */
+
+.resumo-tarefa {
+    border-left: 4px solid #ef4444;
+    border-radius: 4px;
+}
+
+.resumo-tarefa-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.resumo-tarefa-info {
+    min-width: 0;
+}
+
+.resumo-tarefa-info p {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   RESUMO - MOBILE
+   ========================= */
+
+@media screen and (max-width: 480px) {
+
+    .resumo-tarefa-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.app-layout {
+    width: 100%;
+    min-height: 100vh;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.app-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-content {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.app-content .card-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   LAYOUT - TABLET
+   ========================= */
+
+@media screen and (max-width: 1023px) {
+
+    .app-layout {
+        padding: 1rem;
+    }
+
+    .app-content {
+        margin-top: 1.5rem;
+    }
+
+}
+
+
+/* =========================
+   LAYOUT - MOBILE
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    .app-layout {
+        padding: 0.75rem;
+    }
+
+    .app-header {
+        gap: 0.75rem;
+    }
+
+    .app-content {
+        margin-top: 1rem;
+    }
+
+    .app-content .card-content {
+        padding: 1rem;
+    }
+
+    .app-content .card-header-title {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+/* =========================
+   LAYOUT - MOBILE PEQUENO
+   ========================= */
+
+@media screen and (max-width: 480px) {
+
+    .app-layout {
+        padding: 0.5rem;
+    }
+
+    .app-content .card-content {
+        padding: 0.75rem;
+    }
+
+}
+
+/* =========================
+   TAREFAS - FILTROS
+   ========================= */
+
+.tarefas-filtros {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tarefas-pesquisa {
+    width: 240px;
+}
+
+.tarefas-pesquisa .p-inputtext {
+    width: 100%;
+    padding-left: 2.5rem;
+}
+
+.tarefas-filtro-status {
+    width: 190px;
+}
+
+.tarefas-filtro-prioridade {
+    width: 220px;
+}
+
+.tarefas-limpar {
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   TAREFAS - TABELA
+   ========================= */
+
+.tarefas-tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.tarefas-tabela {
+    width: 100%;
+}
+
+.tarefas-tabela .p-datatable-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tarefas-tabela table {
+    width: 100%;
+    min-width: 710px;
+}
+
+.tarefas-tabela .buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   TAREFAS - DIALOG
+   ========================= */
+
+.tarefa-dialog {
+    width: 40vw;
+}
+
+
+/* =========================
+   TAREFAS - TABLET
+   ========================= */
+
+@media screen and (max-width: 1023px) {
+
+    .tarefa-dialog {
+        width: 70vw;
+    }
+
+}
+
+
+/* =========================
+   TAREFAS - MOBILE
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    .tarefas-filtros {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .tarefas-pesquisa,
+    .tarefas-filtro-status,
+    .tarefas-filtro-prioridade {
+        width: 100%;
+    }
+
+    .tarefas-pesquisa .p-inputtext {
+        width: 100%;
+    }
+
+    .tarefas-limpar {
+        width: 100%;
+    }
+
+    .tarefa-dialog {
+        width: 90vw;
+    }
+
+}
+
+
+/* =========================
+   TAREFAS - MOBILE PEQUENO
+   ========================= */
+
+@media screen and (max-width: 480px) {
+
+    .tarefa-dialog {
+        width: 95vw;
+    }
+
+    .tarefa-dialog .p-dialog-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+}
+
+/* =========================
+   FORMULÁRIO DE TAREFA
+   ========================= */
+
+.formulario-tarefa {
+    width: 100%;
+}
+
+.formulario-tarefa .field {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.formulario-tarefa .control {
+    width: 100%;
+}
+
+.formulario-tarefa-campo {
+    width: 100%;
+}
+
+.formulario-tarefa-erro {
+    display: block;
+    margin-top: 0.35rem;
+}
+
+.formulario-tarefa-acoes {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formulario-tarefa-salvar {
+    min-width: 130px;
+}
+
+
+/* =========================
+   FORMULÁRIO - MOBILE
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    .formulario-tarefa .field {
+        margin-bottom: 0.875rem;
+    }
+
+}
+
+
+/* =========================
+   FORMULÁRIO - MOBILE PEQUENO
+   ========================= */
+
+@media screen and (max-width: 480px) {
+
+    .formulario-tarefa-acoes {
+        width: 100%;
+    }
+
+    .formulario-tarefa-salvar {
+        width: 100%;
+    }
+
+}
+
+.tarefas-tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.tarefas-tabela table {
+    width: 100%;
+    min-width: 710px;
+}
+
+.tarefas-tabela th,
+.tarefas-tabela td {
+    white-space: nowrap;
+}
