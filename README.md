@@ -12,15 +12,15 @@ O projeto foi desenvolvido com foco em organização de código, experiência do
 
 ### Dashboard
 
-<!-- Adicionar screenshot do Dashboard -->
+![Dashboard](./public/screenshots/dashboard.png)
 
 ### Gerenciamento de tarefas
 
-<!-- Adicionar screenshot da listagem -->
+![Gerenciamento de tarefas](./public/screenshots/tarefas.png)
 
 ### Dark Mode
 
-<!-- Adicionar screenshot do tema escuro -->
+![Dashboard - Dark Mode](./public/screenshots/dark-mode.png)
 
 ---
 
