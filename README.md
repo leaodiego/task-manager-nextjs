@@ -4,8 +4,15 @@ Aplicação **Full Stack para gerenciamento de tarefas**, desenvolvida com **Nex
 
 O projeto foi desenvolvido com foco em organização de código, experiência do usuário, responsividade e integração entre frontend e backend.
 
----
+## 🌐 Demo Online
 
+A aplicação está disponível online:
+
+[🚀 Acessar Task Manager](https://task-manager-nextjs-kappa.vercel.app)
+
+> O backend utiliza uma instância gratuita no Render. Após um período de inatividade, a primeira requisição pode levar alguns segundos para responder.
+
+---
 ## 📸 Preview
 
 ### Dashboard
