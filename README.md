@@ -70,13 +70,54 @@ O projeto foi desenvolvido com foco em organização de código, experiência do
 
 ### Backend
 
-A aplicação frontend consome uma API desenvolvida utilizando:
+O frontend consome uma API REST desenvolvida utilizando:
 
 - ASP.NET Core Web API
 - C#
 - Swagger / OpenAPI
 
-> O backend pode ser mantido em um repositório separado.
+Repositório do backend:
+
+[Task Manager API](https://github.com/leaodiego/task-manager-api)
+
+---
+
+## 🏗️ Arquitetura
+
+O projeto utiliza uma arquitetura separando frontend e backend.
+
+```text
+┌──────────────────────────────┐
+│     task-manager-nextjs      │
+│                              │
+│ Next.js + React              │
+│ TypeScript + PrimeReact      │
+│ Chart.js                     │
+└──────────────┬───────────────┘
+               │
+               │ HTTP / REST
+               ▼
+┌──────────────────────────────┐
+│       task-manager-api       │
+│                              │
+│ ASP.NET Core Web API         │
+│ C# + Swagger                 │
+└──────────────────────────────┘
+```
+
+Durante o desenvolvimento local:
+
+```text
+Frontend
+http://localhost:3000
+
+        │
+        │ REST
+        ▼
+
+Backend
+http://localhost:5161
+```
 
 ---
 
@@ -121,11 +162,15 @@ Para executar o frontend localmente, é necessário ter instalado:
 - npm
 - Git
 
-Também é necessário que a API do Task Manager esteja disponível para que os dados sejam carregados.
+Também é necessário executar a API do Task Manager para que o frontend possa carregar e manipular os dados.
+
+Backend:
+
+[Task Manager API](https://github.com/leaodiego/task-manager-api)
 
 ---
 
-## 📥 Clonando o projeto
+## 📥 Clonando o frontend
 
 ```bash
 git clone https://github.com/leaodiego/task-manager-nextjs.git
@@ -147,7 +192,7 @@ npm install
 
 ## 🔐 Variáveis de ambiente
 
-Crie um arquivo:
+Crie o arquivo:
 
 ```text
 .env.local
@@ -155,7 +200,7 @@ Crie um arquivo:
 
 na raiz do projeto.
 
-Utilize o arquivo `.env.example` como referência:
+Utilize o `.env.example` como referência:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5161
@@ -167,33 +212,113 @@ A variável:
 NEXT_PUBLIC_API_URL
 ```
 
-define o endereço utilizado pelo frontend para comunicação com a API.
+define a URL utilizada pelo frontend para comunicação com a API.
 
-> O arquivo `.env.local` não deve ser versionado.
+> O arquivo `.env.local` representa a configuração local do ambiente e não deve ser versionado.
 
 ---
 
-## ▶️ Executando o projeto
+## ▶️ Executando o backend
 
-Inicie o ambiente de desenvolvimento:
+Clone o repositório da API:
+
+```bash
+git clone https://github.com/leaodiego/task-manager-api.git
+```
+
+Entre no projeto:
+
+```bash
+cd task-manager-api
+```
+
+Restaure as dependências:
+
+```bash
+dotnet restore
+```
+
+Execute:
+
+```bash
+dotnet run
+```
+
+No ambiente atual de desenvolvimento, a API utiliza:
+
+```text
+http://localhost:5161
+```
+
+A documentação Swagger pode ser acessada localmente em:
+
+```text
+http://localhost:5161/swagger
+```
+
+---
+
+## ▶️ Executando o frontend
+
+Com a API em execução, abra outro terminal dentro do projeto frontend:
 
 ```bash
 npm run dev
 ```
 
-Depois, abra a aplicação no navegador utilizando o endereço informado pelo Next.js no terminal.
+Acesse a aplicação pelo endereço apresentado pelo Next.js no terminal.
+
+No ambiente local utilizado no projeto, frontend e backend se comunicam desta forma:
+
+```text
+Next.js
+localhost:3000
+      │
+      │ HTTP / REST
+      ▼
+ASP.NET Core API
+localhost:5161
+```
+
+---
+
+## 🔄 Integração com a API
+
+A comunicação com o backend está centralizada na camada:
+
+```text
+src/services/
+```
+
+A URL base da API é obtida através de:
+
+```ts
+process.env.NEXT_PUBLIC_API_URL
+```
+
+Isso permite configurar o endereço da API de acordo com cada ambiente sem manter a URL diretamente no serviço.
+
+As operações do gerenciamento de tarefas utilizam os endpoints disponibilizados pelo backend.
+
+```text
+GET     /api/Tarefas
+POST    /api/Tarefas
+GET     /api/Tarefas/{id}
+PUT     /api/Tarefas/{id}
+DELETE  /api/Tarefas/{id}
+```
 
 ---
 
 ## 🧪 Validação do projeto
 
-Para executar o ESLint:
+### ESLint
 
 ```bash
 npm run lint
 ```
 
-Para gerar o build de produção:
+### Build de produção
 
 ```bash
 npm run build
@@ -201,18 +326,53 @@ npm run build
 
 ---
 
-## 🔄 Integração com a API
+## 🔗 Repositórios
 
-A comunicação com o backend está centralizada na camada de serviços:
+### Frontend
 
-```text
-src/services/
-```
+[task-manager-nextjs](https://github.com/leaodiego/task-manager-nextjs)
 
-A URL base da API é obtida através da variável:
+### Backend
 
-```ts
-process.env.NEXT_PUBLIC_API_URL
-```
+[task-manager-api](https://github.com/leaodiego/task-manager-api)
 
-Isso evita manter o endereço da API diretamente no código
+---
+
+## 🎯 Objetivos do projeto
+
+O Task Manager foi desenvolvido para aplicar e demonstrar conhecimentos em:
+
+- Desenvolvimento Full Stack
+- Next.js
+- React
+- TypeScript
+- ASP.NET Core Web API
+- C#
+- Construção e consumo de APIs REST
+- CRUD
+- Integração frontend/backend
+- Componentização
+- Responsividade
+- Tema claro e escuro
+- Dashboard e visualização de dados
+- Variáveis de ambiente
+- Swagger / OpenAPI
+- Git e GitHub
+
+---
+
+## 👨‍💻 Autor
+
+**Diego Viana Leão**
+
+GitHub:
+
+[leaodiego](https://github.com/leaodiego)
+
+---
+
+## 📄 Status
+
+🚧 Projeto em evolução.
+
+O frontend e o backend estão funcionais e integrados. Novas funcionalidades, melhorias visuais e opções de deploy poderão ser adicionadas conforme a evolução do projeto.
